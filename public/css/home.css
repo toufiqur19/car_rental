@@ -1,0 +1,59 @@
+input,textarea,button{
+    box-shadow: none !important;
+}
+.profile{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+#avater{
+    color: aqua;
+    cursor: pointer;
+}
+table{
+    font-size: .9rem;
+}
+.rentals-title{
+    font-weight: 500;
+    color: #172b43;
+}
+.search{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 9999999;
+    margin: 0 0 2rem 0 ;
+    z-index: 9999999;
+}
+.banner img{
+    width: 100%;
+    height: auto;
+}
+
+.overlay{
+    position: absolute;
+    background: #172b43;
+    width: 81%;
+    height: 38.5%;
+    opacity: .8;
+}
+#car_type, #search, #brand{
+    box-shadow: none !important;
+    background-color: #172b43;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.btn2{
+    background: #da1c36;
+    color: #fff;
+}
+.banner-text{
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    z-index: 9999999;
+    margin: 0 0 2rem 0 ;
+    z-index: 9999999;
+    color: #fff;
+}
