@@ -34,3 +34,12 @@ input,textarea,button,select{
 .card p{
     font-weight: 600;
 }
+
+.view-body h6{
+    font-weight: 500;
+    color: #009CFF;
+}
+.view-body span{
+    font-weight: 400;
+    color: #191C24;
+}

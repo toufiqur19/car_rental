@@ -34,7 +34,7 @@
                       <td>{{ $customer->rentals->count() }}</td>
                       <td>
                         <a href="{{ route('customerEdit', $customer->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                        <button type="button" class="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">view</button>
+                        <a href="{{ route('customerview', $customer->id) }}" class="btn btn-primary btn-sm">View</a>
                         <a onclick="deleteData(event)" href="{{ route('customerDelete', $customer->id) }}" class="btn btn-danger btn-sm">Delete</a>
                       </td>
                     </tr>
