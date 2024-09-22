@@ -19,7 +19,7 @@
                           <p>{{ $numberCars }}</p>
                         </div>
                       </div>
-                      <div class="card mt-4">
+                      <div class="card my-4">
                         <div class="card-body">
                           <h6 class="card-title">Available Cars</h6>
                           <p>{{ $availableCars }}</p>

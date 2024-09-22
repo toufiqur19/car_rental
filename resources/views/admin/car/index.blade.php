@@ -14,9 +14,9 @@
                 <a href="{{ route('car.create') }}" class="btn btn1 btn-primary ">Create</a>
             </div><hr>
 
-            <div class="py-1">
+            <div class="py-1 table-responsive overflow">
               <table class="table" id="myTable">
-                <thead style="background: #009CFF;color: white">
+                <thead>
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
@@ -44,7 +44,7 @@
                       <td>
                         <img src="{{ asset($car->image) }}" alt="" width="50px">
                       </td>
-                      <td>
+                      <td class="d-flex gap-2">
                         <a href="{{ route('carEdit', $car->id) }}" class="btn btn-primary btn-sm">Edit</a>
                         <a onclick="deleteData(event)" href="{{ route('carDelete', $car->id) }}" class="btn btn-danger btn-sm">Delete</a>
                       </td>

@@ -14,14 +14,15 @@
                 <a href="{{ route('car.create') }}" class="btn btn1 btn-primary ">Create</a>
             </div><hr>
 
-            <div class="py-1">
+            <div class="py-1 table-responsive overflow">
               <table class="table" id="myTable">
-                <thead style="background: #009CFF;color: white">
+                <thead>
                   <tr>
                     <th scope="col">Customer Name</th>
                     <th scope="col">Car Details</th>
-                    <th scope="col">Start Date</th>
+                    <th scope="col" class="w-25">Start Date</th>
                     <th scope="col">End Date</th>
+                    <th scope="col">Total Cost</th>
                     <th scope="col">Total Cost</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
@@ -35,6 +36,7 @@
                       <td>{{ $rental->start_date }}</td>
                       <td>{{ $rental->end_date }}</td>
                       <td>{{ $rental->total_cost }}</td>
+                      <td>{{ $rental->total_cost }}</td>
                       <td>
                         @if ($rental->status == 1)
                           <p>Complete</p>
@@ -42,7 +44,7 @@
                           <p>Cancel</p>
                         @endif
                       </td>
-                      <td>
+                      <td class="d-flex gap-2">
                         <a href="{{ route('rentalEdit', $rental->id) }}" class="btn btn-primary btn-sm">Edit</a>
                         <a onclick="deleteData(event)" href="{{ route('rentalDelete', $rental->id) }}" class="btn btn-danger btn-sm">Delete</a>
                       </td>

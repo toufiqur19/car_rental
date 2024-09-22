@@ -40,8 +40,8 @@
                     </div>
                 </div>
 
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn1 btn btn-primary p-1.5"style="width: 20%;">Submit</button>
+                <div>
+                    <button type="submit" class="btn1 btn btn-primary p-1.5">Submit</button>
                 </div>
             </form>
         </div>

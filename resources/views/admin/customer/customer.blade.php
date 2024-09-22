@@ -7,14 +7,14 @@
         </script>
         @endsession
         
-    <div class="content car">
+    <div class="content car md-mr-4">
         <div class="carContent px-4 py-4">
             <div class="d-flex justify-content-between">
                 <h4>Customers</h4>
                 <a href="{{ route('customer.create') }}" class="btn btn1 btn-primary ">Create</a>
             </div><hr>
 
-            <div class="py-1">
+            <div class="py-1 table-responsive overflow">
               <table class="table" id="myTable">
                 <thead>
                   <tr>
@@ -32,7 +32,7 @@
                       <td>{{ $customer->email }}</td>
                       <td>{{ $customer->phone }}</td>
                       <td>{{ $customer->rentals->count() }}</td>
-                      <td>
+                      <td class="d-flex gap-2">
                         <a href="{{ route('customerEdit', $customer->id) }}" class="btn btn-primary btn-sm">Edit</a>
                         <a href="{{ route('customerview', $customer->id) }}" class="btn btn-primary btn-sm">View</a>
                         <a onclick="deleteData(event)" href="{{ route('customerDelete', $customer->id) }}" class="btn btn-danger btn-sm">Delete</a>
