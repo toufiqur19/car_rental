@@ -3,10 +3,14 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Models\Car;
+use App\Models\User;
+use App\Mail\SendMail;
 use App\Models\Rental;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Mail\AdminMail;
+use Illuminate\Support\Facades\Mail;
 
 class CarController extends Controller
 {
@@ -19,9 +23,13 @@ class CarController extends Controller
 
     public function carsBook(Request $request,$id)
     {
+        $carsDetails = Car::find($id);
+        // return $carsDetails;
         $car_id = Car::find($id);
+        $email = $request->user()->email;
         $user_id = $request->user()->id;
-        
+        $adminEmail = User::where("role","admin")->pluck("email")->first();
+
        // calculate total cust per day
        $daily_cost = $car_id->daily_rent_price;
        $start_date = Carbon::parse($request->start_date);
@@ -49,7 +57,14 @@ class CarController extends Controller
             $rental->total_cost = $total_cost;
             $rental->save();
         }
+        
+        $response = Mail::to($email)->send(new SendMail($carsDetails));
+        $response = Mail::to($adminEmail)->send(new AdminMail($user_id, $carsDetails));
 
+        if($response)
+        {
+            return redirect("/car-rentals")->with("success","Car booked successfully");
+        }
        
        return redirect("/car-rentals")->with("success","Car booked successfully");
     }
