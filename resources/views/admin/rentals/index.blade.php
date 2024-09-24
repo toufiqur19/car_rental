@@ -11,7 +11,7 @@
         <div class="carContent px-4 py-4">
             <div class="d-flex justify-content-between">
                 <h4>Rentals</h4>
-                <a href="{{ route('car.create') }}" class="btn btn1 btn-primary ">Create</a>
+                <a href="{{ route('rental.create') }}" class="btn btn1 btn-primary ">Create</a>
             </div><hr>
 
             <div class="py-1 table-responsive overflow">
@@ -22,7 +22,6 @@
                     <th scope="col">Car Details</th>
                     <th scope="col" class="w-25">Start Date</th>
                     <th scope="col">End Date</th>
-                    <th scope="col">Total Cost</th>
                     <th scope="col">Total Cost</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
@@ -36,12 +35,11 @@
                       <td>{{ $rental->start_date }}</td>
                       <td>{{ $rental->end_date }}</td>
                       <td>{{ $rental->total_cost }}</td>
-                      <td>{{ $rental->total_cost }}</td>
                       <td>
-                        @if ($rental->status == 1)
-                          <p>Complete</p>
+                        @if($rental->status == 0)
+                            <a href="">Ongoing</a>
                         @else
-                          <p>Cancel</p>
+                            <a href="">Cancel</a>
                         @endif
                       </td>
                       <td class="d-flex gap-2">

@@ -38,10 +38,13 @@ input,textarea,button,select{
 .view-body h6{
     font-weight: 500;
     color: #009CFF;
+    font-size: .9rem;
+    font-weight: 500;
 }
 .view-body span{
     font-weight: 400;
     color: #191C24;
+    font-size: .8rem;
 }
 
 @media screen and (max-width: 768px) {

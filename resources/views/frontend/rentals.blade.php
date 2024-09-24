@@ -16,7 +16,8 @@
   </div> 
 
     <h4 class="mb-3 rentals-title mt-4">Current Booking</h4>
-    <table class="table" id="myTable">
+    <div class="table-responsive overflow">
+      <table class="table" id="myTable">
         <thead>
           <tr>
             <th scope="col">Car</th>
@@ -49,42 +50,45 @@
             @endforeach
         </tbody>
       </table>
+      </div>
 
       <h4 class="mb-3 mt-5 rentals-title">Past Booking</h4>
-      <table class="table" id="myTable">
-        <thead>
-          <tr>
-            <th scope="col">Car</th>
-            <th scope="col">Start Date</th>
-            <th scope="col">End Date</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Total Cost</th>
-            <th scope="col">Image</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-            @foreach ($carRentals as $carRental)
-            @if ($carRental->status == 1 || $carRental->status == 2)
+      <div class="table-responsive overflow">
+        <table class="table" id="myTable">
+          <thead>
             <tr>
-              <th scope="row">{{ $carRental->car->name }}</th>
-              <th scope="row">{{ $carRental->start_date }}</th>
-              <th scope="row">{{ $carRental->end_date }}</th>
-              <th scope="row">{{ $carRental->car->brand }}</th>
-              <th scope="row">{{ $carRental->total_cost }}</th>
-              <th scope="row">
-                <img src="{{ asset($carRental->car->image) }}" alt="" width="50px">
-              </th>
-              <th scope="row">
-                @if ($carRental->status == 1)
-                    <a href="" class="btn btn-sm btn-success">Complete</a>
-                @else
-                    <a href="" class="btn btn-sm btn-danger">Cancel</a>
+              <th scope="col">Car</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Total Cost</th>
+              <th scope="col">Image</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+              @foreach ($carRentals as $carRental)
+              @if ($carRental->status == 1 || $carRental->status == 2)
+              <tr>
+                <th scope="row">{{ $carRental->car->name }}</th>
+                <th scope="row">{{ $carRental->start_date }}</th>
+                <th scope="row">{{ $carRental->end_date }}</th>
+                <th scope="row">{{ $carRental->car->brand }}</th>
+                <th scope="row">{{ $carRental->total_cost }}</th>
+                <th scope="row">
+                  <img src="{{ asset($carRental->car->image) }}" alt="" width="50px">
+                </th>
+                <th scope="row">
+                  @if ($carRental->status == 1)
+                      <a href="" class="btn btn-sm btn-success">Complete</a>
+                  @else
+                      <a href="" class="btn btn-sm btn-danger">Cancel</a>
+                  @endif
+                </th>
                 @endif
-              </th>
-              @endif
-            @endforeach
-        </tbody>
-      </table>
+              @endforeach
+          </tbody>
+        </table>
+      </div>
     
 @endsection

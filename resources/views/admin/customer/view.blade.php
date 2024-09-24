@@ -19,10 +19,38 @@
                 <h6>Customer Email: <span>{{ $customersDetails->email }}</span></h6>
                 <h6>Customer Phone: <span>{{ $customersDetails->phone }}</span></h6>
                 <h6>Customer Address: <span>{{ $customersDetails->address }}</span></h6>
-                {{-- <h6>Car Id: <span>{{ $customersDetails->rentals->car_id }}</span></h6>
-                <h6>Start Date: <span>{{ $customersDetails->rentals->start_date }}</span></h6>
-                <h6>End Date: <span>{{ $customersDetails->rentals->end_date }}</span></h6>
-                <h6>Total Cost: <span>{{ $customersDetails->rentals->total_cost }}</span></h6> --}}
+                <hr>
+                <div class="py-1 table-responsive overflow">
+                    <table class="table" id="myTable">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Car Id</th>
+                          <th scope="col">User Id</th>
+                          <th scope="col">Start Date</th>
+                          <th scope="col">End Date</th>
+                          <th scope="col"> Total Cost</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                            @if($rentals->count() > 0)
+                            <p>Rental History</p>
+                                @foreach ($rentals as $rentals)
+                                <tr>
+                                <td>{{ $rentals->id }}</td>
+                                <td>{{ $rentals->car_id }}</td>
+                                <td>{{ $rentals->user_id }}</td>
+                                <td>{{ $rentals->start_date }}</td>
+                                <td>{{ $rentals->end_date }}</td>
+                                <td>{{ $rentals->total_cost }}</td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <p>Customer has no rental</p>
+                            @endif
+                      </tbody>
+                    </table>
+                  </div>
             </div>
         </div>
     </div>

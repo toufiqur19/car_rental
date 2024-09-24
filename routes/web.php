@@ -39,6 +39,8 @@ Route::middleware(["admin","auth"])->group(function () {
 
     // rentals routes
     Route::get("/rental",[AdminRentalController::class,"rentalView"])->name("rentalView");
+    Route::get("/rental/create",[AdminRentalController::class,"rentalCreate"])->name("rental.create");
+    Route::post("/rental/store",[AdminRentalController::class,"rentalStore"])->name("rentalStore");
     Route::get("/rental/edit/{id}",[AdminRentalController::class,"rentalEdit"])->name("rentalEdit");
     Route::put("/rental/update/{id}",[AdminRentalController::class,"rentalUpdate"])->name("rentalUpdate");
     Route::get("/rental/delete/{id}",[AdminRentalController::class,"destroy"])->name("rentalDelete");

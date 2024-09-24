@@ -13,8 +13,8 @@
     </div>
     <div class="search">
         <form action="">
-            <div class="row text-light fw-light">
-                <div class="col col-4">
+            <div class="row text-light fw-light search_input">
+                <div class="col-lg-4 col-md-4 search_item">
                     <label class="form-label" for="car_type">Car Type</label>
                     <select class="form-select" id="car_type" name="car_type" onchange="this.form.submit()">
                     <option value="">Select Car Type</option>
@@ -23,7 +23,7 @@
                     @endforeach
                     </select>
                 </div>
-                <div class="col col-3">
+                <div class="col-lg-3 col-md-3 search_item">
                     <label class="form-label" for="brand">Brand</label>
                     <select class="form-select brand" id="brand" name="brand" onchange="this.form.submit()">
                         <option value="">Select Brand</option>
@@ -33,7 +33,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col col-5">
+                <div class="col-lg-5 col-md-5 search_item">
                     <label class="form-label">daily rent price</label>
                     <div class="d-flex gap-2">
                         <input class="form-control" id="search" name="search" type="search" value="" placeholder="Search" aria-label="Search">
@@ -48,7 +48,7 @@
         <h4 class="my-4"style="color: #da1c36;">Available Cars</h4>
         <div class="row d-flex ">
             @foreach ($cars as $car)
-            <div class="col col-4 mb-4">
+            <div class="col-sm-4 mb-4">
                 <div class="card">
                     <img src="{{ asset($car->image) }}" class="card-img-top" alt="..." style="width: 100%; height: 150px">
                     <div class="card-body">

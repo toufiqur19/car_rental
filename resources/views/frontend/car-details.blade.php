@@ -21,7 +21,7 @@
     </div>
     <div class="mt-4">
         <div class="row">
-            <div class="col col-lg-8">
+            <div class="col-lg-8">
                 <div class="card mb-3">
                     <img src="{{ asset($carsDetails->image) }}" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -32,7 +32,7 @@
                 </div>
             </div>
 
-            <div class="col col-lg-4">
+            <div class="col-lg-4">
                 <div>
                     <h5>Book Car</h5>
                     
@@ -40,14 +40,14 @@
                         @csrf
                         <div class="mb-3 form-width">
                             <label for="start_date" class="form-label">Start Date</label>
-                            <input type="date" name="start_date" class="form-control p-1.5 fs-6" id="start_date" value="{{ old('start_date') }}">
+                            <input @selected(old('start_date')) type="date" name="start_date" class="form-control p-1.5 fs-6" id="start_date" value="{{ old('start_date') }}">
                             @error('start_date')
                                 <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
                             @enderror
                         </div>
                         <div class="mb-3 form-width">
                             <label for="end_date" class="form-label">End Date</label>
-                            <input type="date" name="end_date" class="form-control p-1.5 fs-6" id="end_date" value="{{ old('end_date') }}">
+                            <input @selected(old('end_date')) type="date" name="end_date" class="form-control p-1.5 fs-6" id="end_date" value="{{ old('end_date') }}">
                             @error('end_date')
                                 <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
                             @enderror

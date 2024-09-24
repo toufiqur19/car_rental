@@ -89,7 +89,8 @@ class CustomerController extends Controller
     public function customerAllView($id)
     {
         $customersDetails = User::with("rentals")->find($id);
-        return view("admin.customer.view",compact("customersDetails"));
+        $rentals = $customersDetails->rentals;
+        return view("admin.customer.view",compact("customersDetails","rentals"));
     }
 
 

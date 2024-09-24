@@ -34,7 +34,7 @@ table{
     position: absolute;
     background: #172b43;
     width: 81%;
-    height: 38.5%;
+    height: 36.8%;
     opacity: .8;
 }
 #car_type, #search, #brand{
@@ -56,4 +56,69 @@ table{
     margin: 0 0 2rem 0 ;
     z-index: 9999999;
     color: #fff;
+}
+
+@media screen and (max-width: 468px) {
+    .overlay {
+        width: 88.3%;
+        height: 12%;
+    }
+    .banner img{
+        width: 100%;
+        height: 12%;
+    }
+    .content_wrapper {
+        margin: 3.7rem 1.5rem;
+    }
+    .search {
+        left: 0;
+        padding: 0 1rem;
+        top: 1rem;
+        position: relative;
+        z-index: -999;
+    }
+    .search_input {
+        gap: .5rem;
+    }
+    .search_input label{
+        display: none;
+    }
+    .banner-text {
+        top: 12%;
+        left: 34%;
+    }
+    
+}
+@media screen and (min-width: 468px) and (max-width: 769px) {
+    .content_wrapper {
+        margin: 3.7rem 3rem;
+    }
+    .overlay {
+        width: 87.5%;
+        height: 19.2%;
+    }
+    .search {
+        top: 12%;
+        left: 12%;
+    }
+    .banner-text {
+        top: 14%;
+    }
+}
+
+@media screen and (min-width: 770px) and (max-width: 822px) {
+    .content_wrapper {
+        margin: 3.7rem 3rem;
+    }
+    .overlay {
+        width: 88%;
+        height: 17.2%;
+    }
+    .search {
+        top: 11%;
+        left: 14%;
+    }
+    .banner-text {
+        top: 12.5%;
+    }
 }
