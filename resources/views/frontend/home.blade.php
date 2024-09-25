@@ -65,4 +65,5 @@
             @endforeach
         </div>
     </div>
+    <a class="btn1 btn btn-sm btn-primary float-end" href="{{ route('carsRentals') }}">view more cars >></a>
 @endsection

@@ -57,7 +57,15 @@ table{
     z-index: 9999999;
     color: #fff;
 }
-
+.about{
+    left: 35%;
+}
+.about-title{
+    color: #da1c36;
+}
+.about-text{
+    margin-top: 5rem;
+}
 @media screen and (max-width: 468px) {
     .overlay {
         width: 88.3%;

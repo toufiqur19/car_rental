@@ -34,12 +34,8 @@
                       <td>{{ $car->name }}</td>
                       <td>{{ $car->brand }}</td>
                       <td>{{ $car->model }}</td>
-                      <td>
-                        @if ($car->availability == 1)
-                          <p>Available</p>
-                        @else
-                          <p>Not Available</p>
-                        @endif
+                      <td class="availability">
+                        <a href="{{ route('carStatus', $car->id) }}" class="btn  btn-sm btn-{{$car->availability ? 'success' : 'danger'}}">{{ $car->availability ? 'Available' : 'Not Available' }}</a>
                       </td>
                       <td>
                         <img src="{{ asset($car->image) }}" alt="" width="50px">

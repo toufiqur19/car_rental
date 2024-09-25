@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     public function index(Request $request, Car $car)
     {
-        $cars = Car::all();
+        $cars = Car::limit(3)->get();
         // $uniqueb = $cars->unique('brand');
         // $uniquet = $cars->unique('car_type');
         $car_brand = $request->input('brand');
@@ -38,6 +38,7 @@ class PageController extends Controller
         $availableCars = Car::where("availability",1)->count();
         $totalRentals = Rental::count();
         $totalEarning = Rental::sum("total_cost");
+        // $totalEarning = Rental::where('status',1)->sum("total_cost");
         return view("admin.dashboard",compact("numberCars","availableCars","totalRentals","totalEarning"));
     }
 
@@ -51,8 +52,9 @@ class PageController extends Controller
         return view("frontend.auth.register");
     }
 
-    public function contact()
+    public function about()
     {
-        return view("frontend.contact-form");
+        return view("frontend.about");
     }
+    
 }

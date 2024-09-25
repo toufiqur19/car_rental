@@ -105,7 +105,6 @@ class CarController extends Controller
         }
     }
 
-
     public function destroy($id)
     {
         $cars = Car::findOrFail($id);
@@ -113,9 +112,7 @@ class CarController extends Controller
         $cars->delete();
         return redirect()->route("carView")->with("success", "Car deleted successfully");
     }
-    
-
-        public function rentalComplete($id)
+    public function rentalComplete($id)
         {
             $status = Rental::find($id);
             if($status)
@@ -131,9 +128,9 @@ class CarController extends Controller
             $status->save();
             }
             return back();
-        }
+    }
 
-        public function rentalCancel($id)
+    public function rentalCancel($id)
         {
             $status = Rental::find($id);
             if($status)
@@ -149,5 +146,20 @@ class CarController extends Controller
             $status->save();
             }
             return back();
+    }
+
+    public function carStatus($id)
+    {
+        $car = Car::find($id);
+        if ($car)
+        {
+            if($car->availability){
+                $car->availability = 0;
+            }else{
+                $car->availability = 1;
+            }
+            $car->save();
         }
+        return back();
+    }
 }

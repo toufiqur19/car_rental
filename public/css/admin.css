@@ -46,6 +46,9 @@ input,textarea,button,select{
     color: #191C24;
     font-size: .8rem;
 }
+.availability a{
+    font-size: .8rem;
+}
 
 @media screen and (max-width: 768px) {
     .car{

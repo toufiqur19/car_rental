@@ -9,7 +9,7 @@
     </div>
 </div>
 
-<div class="login-container mt-5">
+<div class="contract-container mt-5 mx-5">
     @session('success')
     <script>
         successToast("{{ session('success') }}");
@@ -22,31 +22,68 @@
     </script>
     @endsession
     
-    <div class="login-box">
-        <h2 class="text-center fs-2">Contact Form</h2>
-        <form action="{{ route('loginUser') }}" method="POST">
-            @csrf
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control p-1.5 fs-6" id="email" placeholder="Enter your email" value="{{ old('email') }}">
+    <div class="row gap-3">
+        <h2 class="text-center fs-2 mb-3">Contact Form</h2>
+        <div class="col-md-5 contact-info">
+            <div class="text-center">
+                <div class="mb-3">
+                    <h6>Email</h6>
+                    <span>admin"gmail.com</span>
+                </div>
+                <div class="mb-3">
+                    <h6>Phone</h6>
+                    <span>0123456789</span>
+                </div>
+                <div class="mb-3">
+                    <h6>Address</h6>
+                    <span>Sirajganj, Bangladesh</span>
+                </div>
+                <div class="mb-3">
+                    <h6>Opening Hours</h6>
+                    <span>24/7</span>
+                </div>
             </div>
-            @error('email')
-                <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
-            @enderror
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control p-1.5 fs-6" id="password" placeholder="Enter your password" value="{{ old('password') }}">
+        </div>
+        <div class="col-md-6 contact">
+            <div class="">
+                <form action="{{ route('contact.store')}}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" name="name" class="form-control p-1.5" id="name" placeholder="Enter your name" value="{{ old('name') }}">
+                        </div>
+                        @error('name')
+                            <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
+                        @enderror
+                        <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" name="email" class="form-control p-1.5" id="email" placeholder="Enter your email" value="{{ old('email') }}">
+                        </div>
+                        @error('email')
+                            <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Phone Number</label>
+                        <input type="text" name="phone" class="form-control p-1.5" id="phone" placeholder="Enter your phone" value="{{ old('phone') }}">
+                    </div>
+                    @error('phone')
+                        <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
+                    @enderror
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea name="message" class="form-control p-1.5" id="message" placeholder="Enter your message">{{ old('message') }}</textarea>
+                    </div>
+                    @error('message')
+                        <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
+                    @enderror
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btnauth p-1.5 fs-6">Send Message</button>
+                    </div>
+                </form>
             </div>
-            @error('password')
-                <p class="text-danger" style="font-size: .9rem">{{ $message }}</p>
-            @enderror
-            <div class="d-grid gap-2">
-                <button type="submit" class="btn btnauth p-1.5 fs-6">Login</button>
-            </div>
-            <div class="mt-3 text-center al">
-                <p>Don't have an account? <a href="{{ route('register') }}">Sign up</a></p>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 @endsection

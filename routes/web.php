@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CarController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\RentalController as AdminRentalController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\Frontend\CarController as FrontendCarController;
 use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\Frontend\RentalController;
@@ -18,7 +19,10 @@ Route::get("/car-rentals",[RentalController::class,"Rentals"])->name("carsRental
 Route::get("/status/{id}",[CarController::class,"rentalComplete"])->name("rentalComplete");
 Route::get("/status/cancel/{id}",[CarController::class,"rentalCancel"])->name("rentalCancel");
 
-Route::get('/contact',[PageController::class,"contact"])->name("contact");
+Route::get("/view-rent",[RentalController::class,"rentalView"])->name("rental.view"); 
+Route::get("/about",[PageController::class,"about"])->name("about");  
+Route::get('/contact',[ContactController::class,"contact"])->name("contact");
+Route::post("/contact/store",[ContactController::class,"contactStore"])->name("contact.store");
 
 // login routes
 Route::get("/login",[PageController::class,"login"])->name("login");
@@ -36,6 +40,7 @@ Route::middleware(["admin","auth"])->group(function () {
     Route::get("/car/edit/{id}",[CarController::class,"carEdit"])->name("carEdit");
     Route::put("/car/update/{id}",[CarController::class,"carUpdate"])->name("carUpdate");
     Route::get("/car/delete/{id}",[CarController::class,"destroy"])->name("carDelete");
+    Route::get("/car/status/{id}",[CarController::class,"carStatus"])->name("carStatus");
 
     // rentals routes
     Route::get("/rental",[AdminRentalController::class,"rentalView"])->name("rentalView");

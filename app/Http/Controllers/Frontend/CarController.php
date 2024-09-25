@@ -63,10 +63,10 @@ class CarController extends Controller
 
         if($response)
         {
-            return redirect("/car-rentals")->with("success","Car booked successfully");
+            return redirect("/view-rent")->with("success","Car booked successfully");
         }
        
-       return redirect("/car-rentals")->with("success","Car booked successfully");
+       return redirect("/view-rent")->with("success","Car booked successfully");
     }
 
 }

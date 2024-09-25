@@ -43,7 +43,7 @@
                         <ul class="contact_info contact_info_light">
                             <li>
                                 <i class="fa-solid fa-location-dot"></i>
-                                <p>123 Street, Old Trafford, New South London , UK</p>
+                                <p>sirajganj, dhaka,bangladesh</p>
                             </li>
                             <li>
                                 <i class="fa-solid fa-envelope"></i>
