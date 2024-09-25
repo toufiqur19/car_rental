@@ -66,6 +66,21 @@ table{
 .about-text{
     margin-top: 5rem;
 }
+
+.card-title{
+    font-size: 1rem;
+}
+.card-body span{
+    font-size: .9rem;
+}
+.card-body p{
+    font-size: .9rem;
+}
+.card-text1{
+    color: #172b43;
+    font-weight: 700;
+}
+
 @media screen and (max-width: 468px) {
     .overlay {
         width: 88.3%;
@@ -95,7 +110,12 @@ table{
         top: 12%;
         left: 34%;
     }
-    
+    .details h5{
+        font-size: .9rem;
+    }
+    .details p{
+        font-size: .9rem;
+    }
 }
 @media screen and (min-width: 468px) and (max-width: 769px) {
     .content_wrapper {

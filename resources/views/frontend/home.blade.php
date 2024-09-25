@@ -49,14 +49,20 @@
         <div class="row d-flex ">
             @foreach ($cars as $car)
             <div class="col-sm-4 mb-4">
-                <div class="card">
+                <div class="card text-center">
                     <img src="{{ asset($car->image) }}" class="card-img-top" alt="..." style="width: 100%; height: 150px">
                     <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="card-title">{{ $car->name }}</h5>
-                        <span>{{ $car->brand }}</span>
+                        <h5 class="card-title">{{ $car->name }}</h5><hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text1">${{ $car->daily_rent_price }}<span class="text-muted">/day</span></p>
+                            <span class="card-text">Year: {{ $car->year }}</span>
+                        </div>
+                      <div class="">
+                          <span>Brand: {{ $car->brand }}</span><br>
+                          <span class="card-text">Car-Type:{{ $car->car_type }}</span>
+                          <p class="card-text">Model: {{ $car->model }}</p>
                       </div>
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex mt-3 justify-content-between">
                         <a href="{{ route('carDetails', $car->id) }}" class="btn1 btn btn-sm btn-primary">View Details</a>
                       </div>
                     </div>

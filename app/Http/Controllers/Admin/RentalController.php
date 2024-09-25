@@ -74,7 +74,7 @@ class RentalController extends Controller
         $rentals_id = Rental::find($id);
         $validator = Validator::make($request->all(),[
             'car_id' => 'required',
-            'status' => 'required',
+            // 'status' => 'required',
             'start_date' => 'required',
             'end_date' => 'required',
         ]);
@@ -86,7 +86,7 @@ class RentalController extends Controller
         else{
             $rentals_id->update([
                 'car_id' => $request->car_id,
-                'status'=> $request->status,
+                // 'status'=> $request->status,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date
             ]);

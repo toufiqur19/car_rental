@@ -53,11 +53,17 @@
                 <div class="card">
                     <img src="{{ asset($rental->image) }}" class="card-img-top" alt="..." style="width: 100%; height: 150px">
                     <div class="card-body">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="card-title">{{ $rental->name }}</h5>
-                        <span>{{ $rental->brand }}</span>
+                        <h5 class="card-title">{{ $rental->name }}</h5><hr>
+                        <div class="d-flex justify-content-between">
+                            <p class="card-text1">${{ $rental->daily_rent_price }}<span class="text-muted">/day</span></p>
+                            <span class="card-text">Year: {{ $rental->year }}</span>
+                        </div>
+                      <div class="">
+                          <span>Brand: {{ $rental->brand }}</span><br>
+                          <span class="card-text">Car-Type:{{ $rental->car_type }}</span>
+                          <p class="card-text">Model: {{ $rental->model }}</p>
                       </div>
-                      <div class="d-flex justify-content-between">
+                      <div class="d-flex justify-content-between mt-3">
                         <a href="{{ route('carDetails', $rental->id) }}" class="btn1 btn btn-sm btn-primary">View Details</a>
                       </div>
                     </div>

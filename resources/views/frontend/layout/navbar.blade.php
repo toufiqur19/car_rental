@@ -1,6 +1,6 @@
 <!-- navbar section strat -->
 <header>
-    <a href="#" class="logo"><i class="fas fa-car"></i></i>RentMyRide</a>
+    <a href="{{ url('/')}}" class="logo"><i class="fas fa-car"></i></i>RentMyRide</a>
 
     <div id="menu-bar" class="fas fa-bars"></div>
 
