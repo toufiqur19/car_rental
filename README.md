@@ -8,11 +8,11 @@ This car rental project was built using the Laravel framework, which provides a 
  - Customer Access to the front end for browsing cars and booking rentals.
 
 ## Admin Panel:
- - Manage cars, rentals, and customers.
- - Admin CRUD operations for car bookings and customers.
+ - Manage cars, rentals, customers, and dashboards.
+ - Admin CRUD operations for cars, rentals, and customers.
 
 ## User Side:
- - Users can browse available cars, and filter by brand, model, type, and price.
+ - Users can browse available cars, and filter by brand, type, and price.
  - Make bookings by selecting a car and date range.
  - View booking history.
 
@@ -20,11 +20,11 @@ This car rental project was built using the Laravel framework, which provides a 
  - Protect Routes: only logged-in users can book cars and view booking history.
  - Car Management: Admin can add, edit, and delete cars.
  - Booking System: Users can book cars for specific dates.
- - Email Notifications: For booking confirmations.
- - Rental History: Users can view past rentals.
+ - Email Notifications: For booking confirmations to customers and admin.
+ - Rental History: Users can view current and past rentals.
 
 ## Dashboard Overview:
- - Statistics: Total cars, available cars, total rentals, and earnings from rentals.
+ - Statistics: Total cars, available cars, total rentals, and total earnings from rentals.
 
 ## Installation:
  - Clone the repository: `https://github.com/toufiqur19/car_rental`
