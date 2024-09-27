@@ -34,4 +34,16 @@ class ContactController extends Controller
         }
         return redirect('/contact')->with("success","Message Send Successfully!");
     }
+
+    public function viewContract()
+    {
+        $contacts = Contact::all();
+        return view("admin.contact",compact("contacts"));
+    }
+
+    public function contactDelete($id)
+    {
+        Contact::find($id)->delete();
+        return redirect()->back();
+    }
 }

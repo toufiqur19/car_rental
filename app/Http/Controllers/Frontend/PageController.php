@@ -13,7 +13,7 @@ class PageController extends Controller
 {
     public function index(Request $request, Car $car)
     {
-        $cars = Car::limit(3)->get();
+        $cars = Car::orderBy("created_at","desc")->paginate(3);
         // $uniqueb = $cars->unique('brand');
         // $uniquet = $cars->unique('car_type');
         $car_brand = $request->input('brand');

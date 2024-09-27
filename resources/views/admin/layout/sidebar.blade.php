@@ -8,6 +8,7 @@
                 <a href="{{ route('carView')}}" class="nav-item nav-link {{ Request::is('car')?'active':'' }}"><i class="fas fa-car me-2"></i>Cars</a>
                 <a href="{{ route('rentalView')}}" class="nav-item nav-link {{ Request::is('rental')?'active':'' }}"><i class="fas fa-map-signs me-2"></i>Rentals</a>
                 <a href="{{ route('customerView')}}" class="nav-item nav-link {{ Request::is('customer')? 'active':'' }}"><i class="fas fa-users me-2"></i>Customer</a>
+                <a href="{{ route('viewContract')}}" class="nav-item nav-link {{ Request::is('contract')? 'active':'' }}"><i class="fas fa-address-book me-2"></i>Contract</a>
             </div>
         </nav>
     </div>

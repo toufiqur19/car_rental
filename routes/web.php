@@ -59,6 +59,9 @@ Route::middleware(["admin","auth"])->group(function () {
     Route::put("/customer/update/{id}",[CustomerController::class,"customerUpdate"])->name("customerUpdate");
     Route::get("/customer/delete/{id}",[CustomerController::class,"customerDelete"])->name("customerDelete");
 
+    // contract routes
+    Route::get("/contract",[ContactController::class,"viewContract"])->name("viewContract");
+    Route::get("/contract/delete/{id}",[ContactController::class,"contactDelete"])->name("contactDelete");
 });
 
 
